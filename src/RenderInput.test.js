@@ -22,3 +22,20 @@ describe("Input value", () => {
         expect(inputValue.value).toBe("test");
     });
 });
+
+describe("Console button conditionally triggered", () => {
+    it("Should not trigger output function", async () => {
+        const outputConsole = jest.fn();
+        render(<RenderInput outputConsole={outputConsole} />);
+        await userEvent.click(screen.getByRole("button"));
+        expect(outputConsole).not.toHaveBeenCalled();
+    });
+    it("Should trigger output function", async () => {
+        const outputConsole = jest.fn();
+        render(<RenderInput outputConsole={outputConsole} />);
+        const inputValue = screen.getByPlaceholderText("Enter");
+        await userEvent.type(inputValue, "test");
+        await userEvent.click(screen.getByRole("button"));
+        expect(outputConsole).toHaveBeenCalledTimes(1);
+    });
+});
