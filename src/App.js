@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
 import RenderInput from './RenderInput';
 import FrameworkList from "./FrameworkList";
+import MockServer from "./MockServer";
 
 function App() {
   const data = [
@@ -25,12 +25,12 @@ function App() {
   };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="App-header">
         <Counter />
         <RenderInput outputConsole={output} />
         <FrameworkList frameworks={data} />
         {/* <FrameworkList /> */}
+        <MockServer />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -72,7 +72,7 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
+      </div>
     </div>
   );
 }
