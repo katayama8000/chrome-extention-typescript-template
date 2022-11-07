@@ -17,7 +17,6 @@ describe("Input value", () => {
     it("should update on change", async () => {
         render(<RenderInput />);
         const inputValue = screen.getByPlaceholderText("Enter");
-        console.log(inputValue);
         await userEvent.type(inputValue, "test");
         expect(inputValue.value).toBe("test");
     });
