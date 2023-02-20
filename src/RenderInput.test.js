@@ -1,10 +1,12 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import RenderInput from "./RenderInput";
 
 
-
+afterEach(() => {
+    cleanup();
+});
 describe("Rendering", () => {
     it("should render without crashing", () => {
         render(<RenderInput />);
@@ -37,4 +39,11 @@ describe("Console button conditionally triggered", () => {
         await userEvent.click(screen.getByRole("button"));
         expect(outputConsole).toHaveBeenCalledTimes(1);
     });
+
+    it('should update input value correctly', async () => {
+        render(<RenderInput />);
+        const inputValue = screen.getByPlaceholderText("Enter");
+        await userEvent.type(inputValue, "test");
+        expect(inputValue.value).toBe("test");
+    })
 });
