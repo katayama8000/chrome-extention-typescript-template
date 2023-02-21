@@ -1,10 +1,19 @@
-export const createMockFacilityStaffDTO = () => {
+const createMockFacilityStaffDTO = () => {
   const index = Math.floor(Math.random() * 10000)
 
   return {
     id: index.toString(),
     name: 'staff',
     image: null,
+  }
+}
+
+const createMockFacilityDTO = () => {
+  const index = Math.floor(Math.random() * 10000)
+
+  return {
+    id: index,
+    name: 'facility',
   }
 }
 
@@ -15,7 +24,7 @@ type Props = {
   firstNameKana: string
 }
 
-export const createMockFacilityUserDTO = (
+const createMockFacilityUserDTO = (
   { lastName, firstName, lastNameKana, firstNameKana }: Props = {
     lastName: '田中',
     firstName: '太郎',
@@ -45,3 +54,5 @@ export const createMockFacilityUserDTO = (
     lifeOriginFirstNameKana: null,
   }
 }
+
+export { createMockFacilityDTO, createMockFacilityStaffDTO, createMockFacilityUserDTO }

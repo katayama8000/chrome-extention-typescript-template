@@ -14,16 +14,16 @@ type TStaff = {
 }
 const Sample1 = () => {
   const [staffs, setStaffs] = useState<TStaff[]>([])
+  const f = async () => {
+    const q = query(collection(db, 'facilities', 'test', 'staff'))
+    console.log(q)
+    const querySnapshot = await getDocs(q)
+    console.log(querySnapshot)
+    const staff = querySnapshot.docs.map((doc) => doc.data())
+    console.log(staff)
+    setStaffs(staff as TStaff[])
+  }
   useEffect(() => {
-    const f = async () => {
-      const q = query(collection(db, 'facilities', 'test', 'staff'))
-      console.log(q)
-      const querySnapshot = await getDocs(q)
-      console.log(querySnapshot)
-      const staff = querySnapshot.docs.map((doc) => doc.data())
-      console.log(staff)
-      setStaffs(staff as TStaff[])
-    }
     f()
   }, [])
 
