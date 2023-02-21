@@ -21,6 +21,7 @@
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "firebase": "^9.17.1",
     "framer-motion": "^8.4.6",
     "is-ci": "^3.0.1",
     "next": "^13.1.2",
