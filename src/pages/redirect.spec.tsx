@@ -3,8 +3,6 @@ import { render, waitFor } from '@testing-library/react'
 
 import Redirect from './redirect'
 
-// jest.mock('@doctormate-jp/swallow-lib')
-
 const mockRouterReplace = jest.fn()
 jest.mock('next/router', () => ({
   useRouter: () => ({
