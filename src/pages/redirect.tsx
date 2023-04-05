@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 function Redirect() {
   const { replace } = useRouter()
   const f = async () => {
-    replace('/fire/sample1')
+    replace('/')
   }
   useEffect(() => {
     f()
