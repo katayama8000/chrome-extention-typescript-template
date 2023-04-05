@@ -12,7 +12,7 @@ type TStaff = {
     name: string
   }
 }
-const Sample1 = () => {
+function Sample1() {
   const [staffs, setStaffs] = useState<TStaff[]>([])
   const f = async () => {
     const q = query(collection(db, 'facilities', 'test', 'staff'))
