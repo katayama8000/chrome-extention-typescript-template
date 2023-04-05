@@ -16,6 +16,16 @@ describe('Redirect', () => {
     jest.clearAllMocks()
   })
 
+  it('should render successfully', () => {
+    const { baseElement } = render(<Redirect />)
+    expect(baseElement).toBeTruthy()
+  })
+
+  test('shuold render successfully', () => {
+    const { baseElement } = render(<Redirect />)
+    expect(baseElement).toBeTruthy()
+  })
+
   test('ページを表示すると/に遷移すること', async () => {
     const { baseElement } = render(<Redirect />)
     expect(baseElement).toBeTruthy()
