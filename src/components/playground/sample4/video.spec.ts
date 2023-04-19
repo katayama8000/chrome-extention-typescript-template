@@ -1,4 +1,4 @@
-import { video } from './video'
+import { audio, video } from './video'
 
 test('plays video', () => {
   const spy = jest.spyOn(video, 'play', 'get') // we pass 'get'
@@ -11,9 +11,10 @@ test('plays video', () => {
 })
 
 test('plays audio', () => {
-  // const spy = jest.spyOn(audio, 'volume', 'set') // we pass 'set'
-  // audio.volume = 100
-  //   expect(spy).toHaveBeenCalled()
-  //   expect(audio.volume).toBe(100)
-  // spy.mockRestore()
+  const spy = jest.spyOn(audio, 'volume', 'set') // we pass 'set'
+
+  audio.volume = 50
+  expect(spy).toHaveBeenCalled()
+  expect(audio.volume).toBe(50)
+  spy.mockRestore()
 })

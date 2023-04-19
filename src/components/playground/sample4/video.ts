@@ -6,12 +6,12 @@ export const video = {
 }
 
 export const audio = {
-  volume: 0,
+  volumeVal: 100,
   // it's a setter!
-  set setVolume(value: number) {
-    this.volume = value
+  set volume(value: number) {
+    this.volumeVal = value
   },
-  get getVolume(): number {
-    return this.volume
+  get volume(): number {
+    return this.volumeVal
   },
 }
